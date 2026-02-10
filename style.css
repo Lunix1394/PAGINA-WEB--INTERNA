@@ -1,0 +1,444 @@
+/* Configuración General */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #FBF6F1;
+    color: #333;
+    position: relative;
+}
+
+/* Marca de Agua */
+body::before {
+    content: "SUBSECRETARÍA DEL SISTEMA PENITENCIARIO";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 60px;
+    font-weight: bold;
+    color: rgba(205, 133, 63, 0.08);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    letter-spacing: 5px;
+}
+
+/* Encabezado - Oro Viejo */
+.main-header {
+    background-color: #5C4033;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.title-text h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #FFF8DC;
+}
+
+.title-text p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #DAA520;
+}
+
+/* Barra de Navegación - Oro Viejo */
+.navbar {
+    background-color: #8B6914;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar li a:hover {
+    background-color: #5C4033;
+}
+
+.navbar li.active a,
+.navbar li a.active {
+    background-color: #CD853F;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #5C4033;
+    min-width: 280px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #CD853F;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid Menu */
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Tarjetas/Cards - Oro Viejo */
+.card {
+    background: linear-gradient(135deg, #CD853F 0%, #A0522D 100%);
+    color: white;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #8B6914;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.card span {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Content Sections */
+.content-section {
+    background-color: #FFF8DC;
+    border-left: 6px solid #CD853F;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.content-section h2 {
+    color: #5C4033;
+    border-bottom: 3px solid #CD853F;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    color: #CD853F;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Botón Volver */
+.btn-volver {
+    background-color: #8B6914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #5C4033;
+}
+
+/* Section Content */
+.section-content {
+    margin-top: 20px;
+}
+
+/* Document List */
+.document-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.document-list li {
+    background-color: #FBF6F1;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-left: 4px solid #CD853F;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+
+.document-list li:hover {
+    background-color: #FFE4B5;
+}
+
+.document-list a {
+    color: #CD853F;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.document-list a:hover {
+    color: #8B6914;
+    text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .title-text h1 {
+        font-size: 18px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .navbar li a {
+        padding: 10px 15px;
+    }
+
+    .grid-menu {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .card {
+        height: 150px;
+    }
+
+    .card i {
+        font-size: 36px;
+    }
+
+    .dashboard-container {
+        padding: 20px;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+}
+
+/* Pantalla de Login */
+#login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #5C4033 0%, #8B6914 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-container {
+    background-color: #FFF8DC;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.login-container h1 {
+    color: #5C4033;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.login-container h2 {
+    color: #CD853F;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.login-container p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#access-code {
+    padding: 12px 15px;
+    border: 2px solid #CD853F;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+#access-code:focus {
+    outline: none;
+    border-color: #8B6914;
+}
+
+#login-form button {
+    background-color: #CD853F;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login-form button:hover {
+    background-color: #8B6914;
+}
+
+#error-message {
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 10px;
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
